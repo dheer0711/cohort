@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Centered Box with Button</title>
+
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #151010;
+    font-family: Arial, sans-serif;
+  }
+
+  .container {
+    text-align: center;
+  }
+
+  .box {
+    width: 500px;
+    height: 400px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+  }
+
+  button {
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    background: #45a049;
+  }
+</style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="box">
+        <h1></h1>
+    </div>
+    <button>Click Me</button>
+  </div>
+
+</body>
+
+<script>
+    let iplTeams = [
+  {
+    team: "Mumbai Indians",
+    captain: "Hardik Pandya",
+    trophies: 5,
+    jerseyColor: "Blue"
+  },
+  {
+    team: "Chennai Super Kings",
+    captain: "Ruturaj Gaikwad",
+    trophies: 5,
+    jerseyColor: "Yellow"
+  },
+  {
+    team: "Kolkata Knight Riders",
+    captain: "Shreyas Iyer",
+    trophies: 3,
+    jerseyColor: "Purple"
+  },
+  {
+    team: "Sunrisers Hyderabad",
+    captain: "Pat Cummins",
+    trophies: 1,
+    jerseyColor: "Orange"
+  },
+  {
+    team: "Rajasthan Royals",
+    captain: "Sanju Samson",
+    trophies: 1,
+    jerseyColor: "Pink "
+  },
+  {
+    team: "Royal Challengers Bengaluru",
+    captain: "Faf du Plessis",
+    trophies: 0,
+    jerseyColor: "Red "
+  },
+  {
+    team: "Delhi Capitals",
+    captain: "Rishabh Pant",
+    trophies: 0,
+    jerseyColor: "light-blue"
+  },
+  {
+    team: "Punjab Kings",
+    captain: "Shikhar Dhawan",
+    trophies: 0,
+    jerseyColor: "Gold"
+  },
+  {
+    team: "Gujarat Titans",
+    captain: "Shubman Gill",
+    trophies: 1,
+    jerseyColor: "Dark-Blue"
+  },
+  {
+    team: "Lucknow Super Giants",
+    captain: "KL Rahul",
+    trophies: 0,
+    jerseyColor: "green"
+  }
+];
+
+let btn = document.querySelector("button");
+let h1 = document.querySelector("h1");
+
+btn.addEventListener("click", function() {
+  let randomIndex = Math.floor(Math.random() * iplTeams.length);
+  let team = iplTeams[randomIndex];
+  h1.innerText = `Team: ${team.team}\nCaptain: ${team.captain}\nTrophies: ${team.trophies}`;
+  document.querySelector(".box").style.background = team.jerseyColor;
+
+});
+    
+</script>
+</html>
