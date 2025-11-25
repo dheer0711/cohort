@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        height: 100%;
+        width: 100%;
+        background-color: #151010;
+        font-family: Arial, sans-serif;
+        overflow: hidden;
+    }
+
+    main {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #btn {
+        padding: 12px 25px;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        background: #4CAF50;
+        color: white;
+        position: relative;
+        z-index: 9;
+    }
+</style>
+
+<body>
+    <main>
+        <button id="btn">create element</button>
+    </main>
+</body>
+
+<Script>
+    let btn = document.querySelector("#btn");
+    let main = document.querySelector("main");
+    const quotes = [
+        "'Be yourself; '",
+        "'our lives is to be happy.'",
+        "'Life is what happens when you’re busy making other plans.'",
+        "'Get busy living or get busy dying.'",
+        "'You only live once, but if you do it right, once is enough.'",
+        "'In the end, we only regret the chances we didn’t take.'",
+        "'Happiness depends upon ourselves.'",
+        "'Turn your wounds into wisdom.'",
+        "'Dream big and dare to fail.'",
+        "'Stay hungry, stay foolish.'",
+        "'Act as if what you do makes a difference. It does.'",
+        "'Simplicity is the ultimate sophistication.'",
+        "'Believe you can and you’re halfway there.'",
+        "'Do what you can, with what you have, where you are.'",
+        "'Success is not final, failure is not fatal.'"
+    ];
+
+
+    btn.addEventListener('click', function () {
+        let div = document.createElement('div');
+
+        let x = Math.random() * 100;
+        let y = Math.random() * 100;
+        let r = Math.floor(Math.random() * 256);
+        let g = Math.floor(Math.random() * 256);
+        let b = Math.floor(Math.random() * 256);
+        let txt = Math.floor(Math.random() * quotes.length);
+        let rot = Math.random() * 360;
+        // let sc = Math.random() * 2;
+
+
+
+        div.style.width = '100px'
+        div.style.height = '100px'
+        div.style.backgroundColor = 'red'
+        div.style.position = 'absolute'
+        div.style.left = x + '%'
+        div.style.top = y + '%'
+        div.style.backgroundColor = `rgb(${r},${g},${b})`
+        div.innerHTML = quotes[txt];
+        div.style.fontSize = '15px'
+        div.style.color = 'white'
+        div.style.display = 'flex'
+        div.style.justifyContent = 'center'
+        div.style.alignItems = 'center'
+        div.style.borderRadius = '12px'
+        div.style.rotate = rot + 'deg'
+        // div.style.scale = sc;
+
+        main.appendChild(div);
+    })
+
+</Script>
+
+</html>

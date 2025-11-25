@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'helvetica neue';
+    color: white;
+}
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body{
+  background-color: black;
+  padding: 30px;
+}
+
+.elem{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 20px;
+  background-color: #333;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+button{
+  background-color: royalblue;
+  color: #fff;
+  padding: 10px 20px;
+  
+}
+</style>
+
+<body>
+  
+  <div id="main">
+    <div class="elem">
+      <h3>Sarthak</h3>
+      <button>Add Friend</button>
+    </div>
+    <div class="elem">
+      <h3>Anubhav</h3>
+      <button>Add Friend</button>
+    </div>
+    <div class="elem">
+      <h3>Harsh</h3>
+      <button>Add Friend</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+<script>
+
+    let allbtns = document.querySelectorAll("button");
+
+   allbtns.forEach(function(btns)
+   {
+    btns.addEventListener("click",function(){
+        if(btns.innerHTML=="Add Friend")
+        {
+            btns.innerHTML="Remove Friend";
+            btns.style.backgroundColor="green";
+        }
+        else
+        {
+            btns.innerHTML="Add Friend";
+            btns.style.backgroundColor="royalblue";
+        }
+    })
+   })
+
+</script>
+</html>
