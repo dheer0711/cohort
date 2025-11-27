@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotlight Effect</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --x: 400px;
+            --y: 400px;
+        }
+
+        #wrapper {
+            position: relative;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            pointer-events: none;
+            background: radial-gradient(
+                200px at var(--x) var(--y),
+                rgba(255, 255, 255, 0),
+                rgba(0, 0, 0, 0.989)
+            );
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <video autoplay loop src="https://www.pexels.com/download/video/8695143/" controls></video>
+        <div id="overlay"></div>
+    </div>
+
+    <script>
+        document.addEventListener("mousemove", (e) => {
+            document.documentElement.style.setProperty("--x", e.clientX + "px");
+            document.documentElement.style.setProperty("--y", e.clientY + "px");
+        });
+    </script>
+</body>
+</html>

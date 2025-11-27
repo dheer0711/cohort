@@ -9,39 +9,53 @@ html,body{
     width: 100%;
 }       
 
-@font-face {
-    font-family: dheer ;
-    src: url(./Onestrike.ttf);
-}
 #main{
     height: 100%;
     width: 100%;
-    background-image: url("https://cdn.wallpapersafari.com/51/21/wyvWxa.jpg");
-    background-size: cover;
-    background-position: top;
-    text-align:center ;
-    padding: 50px;
+    background-color: black;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-h1{
-    color: rgb(243, 219, 43);
-    font-family: dheer;
-    font-weight: 300;
-    font-size: 50px;
+#card{
+    height: 400px;
+    width: 400px;
+    background-color: white;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    padding: 30px;
+    text-align: center;
 }
 
-button{
-    background-color:rgb(224, 202, 31);
-    color: black;
-    padding: 5px 20px;
-    font-size: 20px;
-    font-family: dheer;
-    font-weight: 900;
+#card img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 10px;
     border-radius: 10px;
 }
 
-button:hover{
-    background-color: rgb(206, 184, 19);
-    cursor: pointer;
-    transform: scale(1.05);
+#card h3{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+#card i {
+    font-size: 80px;
+    position: absolute;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCnAKq0Th6x1qsI3Lo72ucWlH-PLb4XLXdZA&s");
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+     color: transparent;
+
+    transform: translate(-50%, -50%) scale(0) rotate(-60deg);
+    transition: all 0.3s ease;
 }
