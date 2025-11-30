@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,6 +23,10 @@
             height: 100vh;
             width: 100vw;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* justify-items: center; */
         }
 
         video {
@@ -37,11 +42,19 @@
             height: 100%;
             width: 100%;
             pointer-events: none;
-            background: radial-gradient(
-                200px at var(--x) var(--y),
-                rgba(255, 255, 255, 0),
-                rgba(0, 0, 0, 0.989)
-            );
+            background: radial-gradient(200px at var(--x) var(--y),
+                    rgba(255, 255, 255, 0),
+                    rgba(0, 0, 0, 0.989));
+        }
+
+        p {
+            color: rgb(255, 255, 255);
+            font-family: monospace;
+            font-size: 40px;
+            font-weight: 800;
+            position: absolute;
+            /* top: 50%; */
+            text-align: center;
         }
     </style>
 </head>
@@ -49,6 +62,7 @@
 <body>
     <div id="wrapper">
         <video autoplay loop src="https://www.pexels.com/download/video/8695143/" controls></video>
+        <p id="para">hello this is dheer jain</p>
         <div id="overlay"></div>
     </div>
 
@@ -57,6 +71,40 @@
             document.documentElement.style.setProperty("--x", e.clientX + "px");
             document.documentElement.style.setProperty("--y", e.clientY + "px");
         });
+
+        let para = document.querySelector("#para");
+        const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        let text = para.innerText;
+        let itr = 0
+        let interval;
+
+        function matrix() {
+            let str = text.split('').map((char, index) => {
+                if (index < itr) {
+                    return char;
+                }
+                return characters.split('')[Math.floor(Math.random() * characters.length)]
+            }).join("")
+
+            para.innerText = str;
+            itr += 0.25;
+
+            if (itr >= text.length) {
+                clearInterval(interval);
+            }
+
+            // console.log(str);
+        }
+
+        para.addEventListener("mouseenter", function () {
+            itr = 0;
+            clearInterval(interval);
+            interval = setInterval(matrix, 30);
+            // itr = 0;
+        })
+
     </script>
+
 </body>
+
 </html>

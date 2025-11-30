@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+main{
+     width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    anchor-name: --effect;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+    font-weight: 900;
+    padding: 10px 20px;
+    /* border: 2px solid white; */
+    border-radius: 10px;
+}
+
+a:hover{
+    anchor-name: --effect;
+    /* color: black; */ 
+}
+
+#anchor{
+    background-color: aliceblue;
+    border-radius: 10px;
+    position: absolute;
+    position-anchor: --effect;
+    top: anchor(top);
+    bottom: anchor(bottom);
+    left: anchor(left);
+    right: anchor(right);
+    pointer-events: none;
+    mix-blend-mode: difference;
+    transition: all 0.5s linear;
+}

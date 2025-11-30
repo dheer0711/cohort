@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+/* background-color: #000; */
+}
+
+
+main{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    anchor-name: --some-anchor;
+    background-color: rgb(255, 255, 255);
+    gap: 20px;
+}
+
+/* main:has(.box:hover) .box{
+    transform: scale(0.8);
+
+} */
+
+
+#btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: white;
+}
+
+
+.box{
+    height: 50px;
+    /* width: auto; */
+    padding: 1rem;
+    transition: all 0.3s linear;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+    border-radius: 1rem;
+    border: 1px solid black;
+
+}
+
+.box:hover{
+    anchor-name: --some-anchor;
+    /* transform: scale(1.2)!important; */
+}
+
+.anchor{
+    background-color: rgb(255, 255, 255);
+    border-radius: 1rem;
+    position: absolute;
+    position-anchor: --some-anchor;
+    /* height: 50px;
+    width: 60px; */
+    top: anchor(top);
+    left: anchor(left);
+    bottom: anchor(bottom);
+    right: anchor(right);
+    transition: all linear 0.3s;
+    mix-blend-mode: difference!important;
+    pointer-events: none;
+}
+
+
+
+
+
+
